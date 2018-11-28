@@ -36,7 +36,6 @@ module.exports = function() {
 				  			res.json(users_msg_count);
 				  		})
 				  		.catch((err) => {
-				  			console.log("Nemam Amma Bhagavan Sharanam -- err", err);
 				  			res.json([]);
 				  		})
 		},
@@ -51,7 +50,6 @@ module.exports = function() {
 	sendDirectMessage: function(req, res) {
 
 		var direct_message = req.body.direct_message;
-		console.log("Nemam Amma Bhagavan Sharanam -- dm", req.body, " direct message", direct_message);
 
 		db["DirectMessage"].create(direct_message)
 		.then((direct_message) => {
@@ -60,7 +58,6 @@ module.exports = function() {
 				}
 		})
 		.catch((err) => {
-			console.log("Nemam Amma Bhagavan Sharnam -- err", err);
 			res.send({sent: false})
 		});	
 
@@ -86,7 +83,6 @@ module.exports = function() {
 				  			res.json(direct_messages);
 				  		})
 				  		.catch((err) => {
-				  			console.log("Nemam Amma Bhagavan Sharanam -- err", err);
 				  			res.json([]);
 				  		})
 
